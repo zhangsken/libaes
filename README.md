@@ -20,8 +20,8 @@ https://jitpack.io/#com.github.zhangsken/AES
     }
 ## 修改项目文件夹build.gradle文件，添加项目依赖项
 dependencies {
-            implementation 'com.github.zhangsken:AES:2.0.3'
-            }
+            implementation 'com.github.zhangsken.AES:libaes:3.1.220805.5'
+	}
     
     
 (2)类库使用
