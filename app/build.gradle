@@ -9,8 +9,8 @@ android {
         minSdkVersion 8
         targetSdkVersion 29
         versionCode 1
-        //{版本型态控制号.增量号.调试号}
-        versionName "2.0.5"
+        //{版本型态控制号.功能号.时间代码.调试号}
+        versionName "3.1.220805.5"
     }
 
     buildTypes {
