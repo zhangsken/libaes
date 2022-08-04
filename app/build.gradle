@@ -23,5 +23,6 @@ android {
 
 dependencies {
 	api project(':libaes')
+    implementation 'com.github.zhangsken.CrashReport:libcrashreport:3.7.220803.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
 }

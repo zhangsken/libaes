@@ -5,9 +5,16 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical">
 
-	<cc.zhangsken.libaes.Button
+	<cc.zhangsken.libaes.AToolbar
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/activitymainAToolbar1"/>
+
+	<cc.zhangsken.libaes.AButton
 		android:layout_width="wrap_content"
 		android:layout_height="32dp"
-		android:text="确定"/>
+		android:text="确定"
+		android:onClick="onTest"/>
 
 </LinearLayout>
+
