@@ -7,8 +7,8 @@
 使用安卓应用AIDE编译。
 app 是测试类库的项目。
 libaes 是可供外部引用的类库。
-类库版本查询网址：
-https://jitpack.io/#com.github.zhangsken/AES
+本类库版本查询接口：
+[![](https://jitpack.io/v/zhangsken/AES.svg)](https://jitpack.io/#zhangsken/AES)
 
 #### libaes 类库引用方法
 (1)修改项目中的上一层根目录build.gradle文件，添加的Maven库:
@@ -39,4 +39,4 @@ ZhanGSKen<ZhangShaojian2018@163.com> 主要适配小米9开发版MIUI12.5的安�
 android shape(如自定义Button)
 https://www.cnblogs.com/liangstudyhome/p/3715259.html
 
-[![](https://jitpack.io/v/zhangsken/AES.svg)](https://jitpack.io/#zhangsken/AES)
+
