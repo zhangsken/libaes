@@ -6,11 +6,11 @@ android {
 
     defaultConfig {
         applicationId "cc.zhangsken.aes"
-        minSdkVersion 8
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
-        //{版本型态控制号.功能号.时间代码.调试号}
-        versionName "3.1.220805.5"
+        //{版本型态控制号.功能号.调试号}
+        versionName "4.0.0"
     }
 
     buildTypes {
@@ -23,6 +23,6 @@ android {
 
 dependencies {
 	api project(':libaes')
-    implementation 'com.github.zhangsken.CrashReport:libcrashreport:3.7.220803.0'
+    implementation 'com.github.zhangsken.CrashReport:libcrashreport:4.0.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
 }
