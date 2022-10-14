@@ -10,9 +10,9 @@
         <shape android:shape="rectangle" > 
             <gradient 
                 android:angle="270" 
-                android:startColor="#FF0091CE"
-                android:centerColor="#FF00B3FF"
-                android:endColor="#FF2AC0FF"/> 
+                android:startColor="@color/colorAToolbarStartColor"
+                android:centerColor="@color/colorAToolbarCenterColor"
+                android:endColor="@color/colorAToolbarEndColor"/> 
             <corners 
                 android:bottomLeftRadius="6dip" 
                 android:bottomRightRadius="6dip" 
@@ -31,9 +31,9 @@
             <gradient
                 android:type="linear"
                 android:angle="270"
-                android:startColor="#FF2AC0FF"
-                android:centerColor="#FF00B3FF"
-                android:endColor="#FF0091CE"/> 
+                android:startColor="@color/colorAToolbarEndColor"
+                android:centerColor="@color/colorAToolbarCenterColor"
+                android:endColor="@color/colorAToolbarStartColor"/> 
             <corners 
                 android:bottomLeftRadius="6dip" 
                 android:bottomRightRadius="6dip" 
