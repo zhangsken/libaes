@@ -10,7 +10,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         //{版本型态控制号.功能号.调试号}
-        versionName "4.1.2"
+        versionName "4.2.2"
     }
 
     buildTypes {
