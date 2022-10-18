@@ -10,6 +10,18 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/activitymainAToolbar1"/>
 
+	<cc.zhangsken.libaes.ACard
+		android:layout_width="200dp"
+		android:layout_height="200dp"
+		android:id="@+id/activitymainAToolbar1"
+		android:layout_margin="35dp">
+
+		<ProgressBar
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+	</cc.zhangsken.libaes.ACard>
+
 	<cc.zhangsken.libaes.AButton
 		android:layout_width="wrap_content"
 		android:layout_height="32dp"
