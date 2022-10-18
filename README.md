@@ -39,4 +39,5 @@ ZhanGSKen<ZhangShaojian2018@163.com> 主要适配小米9开发版MIUI12.5的安�
 android shape(如自定义Button)
 https://www.cnblogs.com/liangstudyhome/p/3715259.html
 
-
+Android:如何更改ProgressBar的高度？
+https://qa.1r1g.com/sf/ask/191743051/

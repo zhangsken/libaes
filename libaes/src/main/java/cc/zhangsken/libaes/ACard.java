@@ -5,13 +5,10 @@ import android.util.AttributeSet;
 import android.widget.ProgressBar;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
-public class ACard extends ViewGroup {
+public class ACard extends LinearLayout {
 
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        
-    }
     
     
     public ACard(Context context) {
