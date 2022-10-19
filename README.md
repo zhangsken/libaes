@@ -20,7 +20,7 @@ libaes 是可供外部引用的类库。
     }
 ## 修改项目文件夹build.gradle文件，添加项目依赖项
 dependencies {
-            implementation 'com.github.zhangsken.AES:libaes:3.1.220805.5'
+            implementation 'com.github.zhangsken.AES:libaes:4.3.2'
 	}
     
     
