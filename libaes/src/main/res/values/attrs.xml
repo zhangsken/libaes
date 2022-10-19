@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AToolbar">
-        <attr name="startColor" format="color" />
-        <attr name="centerColor" format="color" />
-        <attr name="endColor" format="color" />
+        <attr name="AToolbarStartColor" format="color" />
+        <attr name="AToolbarCenterColor" format="color" />
+        <attr name="AToolbarEndColor" format="color" />
     </declare-styleable>   
     <declare-styleable name="ACard">
-        <attr name="backgroudColor" format="color" />
-        <attr name="shadowColor" format="color" />
-        <attr name="frameColor" format="color" />
+        <attr name="ACardBackgroudColor" format="color" />
+        <attr name="ACardShadowColor" format="color" />
+        <attr name="ACardFrameColor" format="color" />
     </declare-styleable>
     <declare-styleable name="ATickProgressBar">
-        <attr name="backgroudColor" format="color" />
-        <attr name="progressColor" format="color" />
+        <attr name="ATickProgressBarBackgroudColor" format="color" />
+        <attr name="ATickProgressBarProgressColor" format="color" />
     </declare-styleable>
 </resources>
