@@ -2,6 +2,7 @@ package cc.zhangsken.libaes;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.LayoutInflater.Factory2;
 
 public class AButton extends android.widget.Button {
     

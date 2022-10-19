@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- 测试方案 1 -->
-    <color name="colorPrimary">#FF0E8EE3</color>
-    <color name="colorPrimaryDark">#FF0C77BD</color>
-    <color name="colorAccent">#FFDE0110</color>
+    <!--<color name="colorPrimary">#FF727272</color>
+    <color name="colorPrimaryDark">#FF444444</color>
+    <color name="colorAccent">#FF9EA19F</color>-->
 <!--
 	<color name="colorAToolbarStartColor">#FF47ACEF</color>
     <color name="colorAToolbarCenterColor">#FF0E8EE3</color>
     <color name="colorAToolbarEndColor">#FF0078C8</color>
 	-->
-	<!-- 测试方案 2 
-    <color name="colorPrimary">#FF787878</color>
-    <color name="colorPrimaryDark">#FF787878</color>
-    <color name="colorAccent">#FFB559E8</color>
+	<!-- 测试方案 2 -->
+    <color name="colorPrimary">#FF16B0E4</color>
+    <color name="colorPrimaryDark">#FF009BCE</color>
+    <color name="colorAccent">#FF4ED2FF</color>
 
-	<color name="colorAToolbarStartColor">#FFB2B2B2</color>
+	<!--<color name="colorAToolbarStartColor">#FFB2B2B2</color>
     <color name="colorAToolbarCenterColor">#FF787878</color>
-    <color name="colorAToolbarEndColor">#FF555555</color>
-	-->
+    <color name="colorAToolbarEndColor">#FF555555</color>-->
+	<!---->
 
 </resources>

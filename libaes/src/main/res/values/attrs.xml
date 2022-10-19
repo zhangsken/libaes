@@ -5,4 +5,13 @@
         <attr name="centerColor" format="color" />
         <attr name="endColor" format="color" />
     </declare-styleable>   
+    <declare-styleable name="ACard">
+        <attr name="backgroudColor" format="color" />
+        <attr name="shadowColor" format="color" />
+        <attr name="frameColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="ATickProgressBar">
+        <attr name="backgroudColor" format="color" />
+        <attr name="progressColor" format="color" />
+    </declare-styleable>
 </resources>

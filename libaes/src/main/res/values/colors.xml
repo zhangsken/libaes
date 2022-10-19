@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF00B91B</color>
-    <color name="colorPrimaryDark">#FF037714</color>
-    <color name="colorAccent">#FFE7F10B</color>
+    <!-- 默认方案 -->
+    <color name="colorPrimary">#FF727272</color>
+    <color name="colorPrimaryDark">#FF444444</color>
+    <color name="colorAccent">#FF9EA19F</color>
 	
-    <color name="colorAToolbarStartColor">#FF444444</color>
-    <color name="colorAToolbarCenterColor">#FF727272</color>
-    <color name="colorAToolbarEndColor">#FF9EA19F</color>
+    <color name="colorAToolbarStartColor">@color/colorPrimaryDark</color>
+    <color name="colorAToolbarCenterColor">@color/colorPrimary</color>
+    <color name="colorAToolbarEndColor">@color/colorAccent</color>
+
+    <color name="colorACardShadow">@color/colorPrimaryDark</color>
+    <color name="colorACardFrame">@color/colorPrimary</color>
+    <color name="colorACardBackgroung">@color/colorAccent</color>
+    
+    <color name="colorATickProgressBarBackgroung">@color/colorAccent</color>
+    <color name="colorATickProgressBarProgress">@color/colorPrimary</color>
+    <!-- -->
+    
+    <!-- 调试方案 
+    <color name="colorPrimary">#FF727272</color>
+    <color name="colorPrimaryDark">#FF444444</color>
+    <color name="colorAccent">#FF9EA19F</color>
+
+    <color name="colorAToolbarStartColor">#FF4776EB</color>
+    <color name="colorAToolbarCenterColor">#FF0D4BE7</color>
+    <color name="colorAToolbarEndColor">#FF8FA7E3</color>
+
+    <color name="colorACardShadow">#FF22A200</color>
+    <color name="colorACardFrame">#FF3FCC19</color>
+    <color name="colorACardBackgroung">#FF88F16B</color>
+
+    <color name="colorATickProgressBarBackgroung">#FF6DC4E2</color>
+    <color name="colorATickProgressBarProgress">#FF22B0E1</color>
+     -->
 </resources>

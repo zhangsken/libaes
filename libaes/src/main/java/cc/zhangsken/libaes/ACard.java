@@ -6,6 +6,7 @@ import android.widget.ProgressBar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.content.res.TypedArray;
 
 public class ACard extends LinearLayout {
 
@@ -21,7 +22,7 @@ public class ACard extends LinearLayout {
         // 获得TypedArray
         //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AToolbar);
         // 获得attrs.xml里面的属性值,格式为:名称_属性名,后面是默认值
-        //int startColor = a.getColor(R.styleable.AToolbar_startColor, context.getColor(R.color.colorAToolbarStartColor));
+        //int colorBackgroud = a.getColor(R.styleable.ACard_backgroudColor, context.getColor(R.color.colorACardBackgroung));
         //int centerColor = a.getColor(R.styleable.AToolbar_centerColor, context.getColor(R.color.colorAToolbarCenterColor));
         //int endColor = a.getColor(R.styleable.AToolbar_endColor, context.getColor(R.color.colorAToolbarEndColor));
         //float tSize = a.getDimension(R.styleable.CustomView_tSize, 35);

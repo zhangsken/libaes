@@ -27,7 +27,7 @@ public class AToolbar extends Toolbar {
 		//p.setTextSize(tSize);
 		//Drawable drawable = context.getDrawable(R.drawable.frame_atoolbar);
 		
-		setBackground(context.getDrawable(R.drawable.frame_atoolbar));
+		setBackground(context.getDrawable(R.drawable.atoolbar_frame));
 		
 		// 返回一个绑定资源结束的信号给资源
 		//a.recycle();
