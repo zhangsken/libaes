@@ -14,4 +14,9 @@
         <attr name="attrATickProgressBarBackgroudColor" format="color" />
         <attr name="attrATickProgressBarProgressColor" format="color" />
     </declare-styleable>
+    <declare-styleable name="OneHundredPercantClickToSendProgressBar">
+        <attr name="attrOHPCTSBackgroundColor" format="color" />
+        <attr name="attrOHPCTSSecondaryProgressColor" format="color" />
+        <attr name="attrOHPCTSProgressColor" format="color" />
+    </declare-styleable>
 </resources>

@@ -2,24 +2,18 @@ package cc.zhangsken.libaes;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ProgressBar;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.content.res.TypedArray;
+import cc.zhangsken.libaes.R;
 
-public class ACard extends LinearLayout {
+public class AOHPCTSCard extends ACard {
 
-    
-    
-    public ACard(Context context) {
+    public AOHPCTSCard(Context context) {
         super(context);
     }
 
-    public ACard(Context context, AttributeSet attrs) {
+    public AOHPCTSCard(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPadding(0+0+2+1,0+0+2+1,0+1+3+1,0+2+3+1);
-        
+        //setPadding(0 + 0 + 2 + 1, 0 + 0 + 2 + 1, 0 + 1 + 3 + 1, 0 + 2 + 3 + 1);
+
         // 获得TypedArray
         //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AToolbar);
         // 获得attrs.xml里面的属性值,格式为:名称_属性名,后面是默认值
@@ -31,7 +25,7 @@ public class ACard extends LinearLayout {
         //p.setTextSize(tSize);
         //Drawable drawable = context.getDrawable(R.drawable.frame_atoolbar);
 
-        setBackground(context.getDrawable(R.drawable.acard_frame_main));
+        //setBackground(context.getDrawable(R.drawable.acard_frame_main));
 
         // 返回一个绑定资源结束的信号给资源
         //a.recycle();
@@ -41,8 +35,8 @@ public class ACard extends LinearLayout {
 
     }
 
-    public ACard(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AOHPCTSCard(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-    
+
 }

@@ -15,6 +15,11 @@
     
     <color name="colorATickProgressBarBackgroung">@color/colorAccent</color>
     <color name="colorATickProgressBarProgress">@color/colorPrimary</color>
+    
+    <color name="colorOHPCTSBackground">@color/colorAccent</color>
+    <color name="colorOHPCTSSecondaryProgress">@color/colorPrimary</color>
+    <color name="colorOHPCTSProgress">@color/colorPrimaryDark</color>
+    
     <!-- -->
     
     <!-- 调试方案 
