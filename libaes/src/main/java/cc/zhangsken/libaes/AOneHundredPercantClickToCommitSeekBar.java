@@ -4,9 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
-public class AOneHundredPercantClickToSendSeekBar extends SeekBar{
+public class AOneHundredPercantClickToCommitSeekBar extends SeekBar{
     
-    public static final String TAG = "AOneHundredPercantClickToSendSeekBar";
+    public static final String TAG = "AOneHundredPercantClickToCommitSeekBar";
     
     //Context mContext;
     OnOneHundredPercantCommitListener mOnOneHundredPercantCommitListener;
@@ -14,7 +14,7 @@ public class AOneHundredPercantClickToSendSeekBar extends SeekBar{
     OnSeekBarChangeListener mOnSeekBarChangeListener = new OnSeekBarChangeListener() {
 
         @Override
-        public void onProgressChanged(SeekBar p1, int p2, boolean p3) {
+        public void onProgressChanged(SeekBar seekBar, int p2, boolean p3) {
             }
 
         @Override
@@ -42,12 +42,12 @@ public class AOneHundredPercantClickToSendSeekBar extends SeekBar{
         abstract void onOneHundredPercantCommit();
     } 
     
-    public AOneHundredPercantClickToSendSeekBar(Context context) {
+    public AOneHundredPercantClickToCommitSeekBar(Context context) {
         super(context);
         //mContext = context;
     }
 
-    public AOneHundredPercantClickToSendSeekBar(Context context, AttributeSet attrs) {
+    public AOneHundredPercantClickToCommitSeekBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         //mContext = context;
         setOnSeekBarChangeListener(mOnSeekBarChangeListener);
@@ -70,7 +70,7 @@ public class AOneHundredPercantClickToSendSeekBar extends SeekBar{
 
     }
 
-    public AOneHundredPercantClickToSendSeekBar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public AOneHundredPercantClickToCommitSeekBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         //mContext = context;
     }

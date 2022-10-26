@@ -22,7 +22,10 @@ android {
 }
 
 dependencies {
-	api project(':libaes')
-    implementation 'com.github.zhangsken.CrashReport:libcrashreport:4.0.0'
+	implementation 'androidx.fragment:fragment:1.0.0'
+	implementation 'androidx.appcompat:appcompat:1.0.0'
+	implementation project(':libaes')
+    implementation 'com.github.zhangsken.LogUtils:liblogutils:2.13.2'
+    implementation 'cc.zhangsken.ApplicationUtils:libapputils:1.0.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
 }
