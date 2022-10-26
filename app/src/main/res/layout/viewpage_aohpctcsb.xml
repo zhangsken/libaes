@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="AOneHundredPercantClickToCommitSeekBar"/>
 
-    <cc.zhangsken.libaes.AOneHundredPercantClickToCommitSeekBar
+    <com.github.loneyz.libaes.AOneHundredPercantClickToCommitSeekBar
         android:layout_width="300dp"
         android:layout_height="30dp"/>
 </LinearLayout>

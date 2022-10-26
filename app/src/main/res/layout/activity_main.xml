@@ -5,19 +5,65 @@
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content">
 
-	<cc.zhangsken.libaes.AToolbar
+	<com.github.loneyz.libaes.AToolbar
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/activitymainAToolbar1"/>
 
-	<androidx.viewpager.widget.ViewPager
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"/>
-
 	<FrameLayout
-		android:layout_height="300dp"
 		android:layout_width="match_parent"
-		android:id="@+id/activitymainFrameLayout1"/>
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_weight="1.0">
+
+		<androidx.viewpager.widget.ViewPager
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/activitymainViewPager1"/>
+
+		<LinearLayout
+			android:id="@+id/linearLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_gravity="bottom|center"
+			android:layout_marginBottom="5dp"
+			android:gravity="center">
+
+			<ImageView
+				android:id="@+id/point1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dp"/>
+
+			<ImageView
+				android:id="@+id/point2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dp"/>
+
+			<ImageView
+				android:id="@+id/point3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dp"/>
+
+			<ImageView
+				android:id="@+id/point4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dp"/>
+
+			<ImageView
+				android:id="@+id/point5"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dp"
+				android:layout_marginRight="10dp"/>
+
+		</LinearLayout>
+
+	</FrameLayout>
 
 </LinearLayout>
 

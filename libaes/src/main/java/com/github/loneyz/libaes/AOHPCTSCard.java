@@ -1,8 +1,8 @@
-package cc.zhangsken.libaes;
+package com.github.loneyz.libaes;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import cc.zhangsken.libaes.R;
+import com.github.loneyz.libaes.R;
 
 public class AOHPCTSCard extends ACard {
 

@@ -1,11 +1,11 @@
-package cc.zhangsken.aes;
+package com.github.loneyz.aes;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.view.View;
-import com.github.zhangsken.liblogutils.LogView;
-import com.github.zhangsken.liblogutils.LogFilterSpec;
+import com.github.loneyz.libapplogutils.LogView;
+import com.github.loneyz.libapplogutils.LogFilterSpec;
 
 public class LogViewFragment extends Fragment {
     

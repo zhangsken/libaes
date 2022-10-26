@@ -1,16 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 32
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
-        applicationId "cc.zhangsken.aes"
-        minSdkVersion 19
+        applicationId "com.github.loneyz.aes"
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         //{版本型态控制号.功能号.调试号}
-        versionName "4.4.0"
+        versionName "1.0.0"
     }
 
     buildTypes {
@@ -19,13 +19,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 }
 
 dependencies {
 	implementation 'androidx.fragment:fragment:1.0.0'
 	implementation 'androidx.appcompat:appcompat:1.0.0'
 	implementation project(':libaes')
-    implementation 'com.github.zhangsken.LogUtils:liblogutils:2.13.2'
-    implementation 'cc.zhangsken.ApplicationUtils:libapputils:1.0.0'
+    implementation 'com.github.loneyz:libapplogutils:1.0.0'
+    implementation 'com.github.loneyz:libapputils:1.0.5'
     implementation fileTree(dir: "libs", include: ["*.jar"])
 }

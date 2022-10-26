@@ -1,42 +1,61 @@
-plugins {
-    id 'com.android.library'
-    id 'maven-publish'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 // Because the components are created only during the afterEvaluate phase, you must
 // configure your publications using the afterEvaluate() lifecycle method.
 afterEvaluate {
     publishing {
+        // 自定义本地Maven路径，默认路径是~/.m2/repository
+        //repositories {
+        //    maven {
+        //        name = 'localRepo'
+        //        url = "file:///storage/emulated/0/Maven/repository"
+        //    }
+        //}
         publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                // Applies the component for the release build variant.
-                from components.release
+        release(MavenPublication) {
+            groupId = 'com.github.loneyz'
+            artifactId = 'libaes'
+            version = '1.0.0'
 
-                // You can then customize attributes of the publication as shown below.
-                groupId = 'com.github.zhangsken'
-                artifactId = 'libaes'
-                //version = '1.1.18'
-            }
-            // Creates a Maven publication called “debug”.
-            debug(MavenPublication) {
-                // Applies the component for the debug build variant.
-                from components.debug
-
-                groupId = 'com.github.zhangsken'
-                artifactId = 'libaes-debug'
-                //version = '1.1.18'
+            //from components.java
+            // 必须有这个 否则不会上传AAR包
+            afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
+            // 上传source，这样使用方可以看到方法注释
+            //artifact generateSourcesJar
+            //要上传的aar路径
+            //artifact "$buildDir/outputs/aar/${project.getName()}-release.aar"
+            //artifact "$buildDir/outputs/aar/${project.getName()}-debug.aar"
+            
+            pom {
+                name = 'Android Elementary Substance Library'
+                description = 'Loneyz\'s Android Elementary Substance Library.'
+                url = 'https://github.com/loneyz/libaes.git'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                }
+                developers {
+                    developer {
+                        id = 'loneyz'
+                        name = 'loneyz'
+                        email = 'l3981402@gmail.com'
+                    }
+                }
             }
         }
     }
+    }
 }
 
-android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
 
+android {
+    compileSdk 32
+    buildToolsVersion '30.0.3'
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 14
         targetSdkVersion 29
     }
 
@@ -45,6 +64,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 

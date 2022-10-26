@@ -1,11 +1,11 @@
-package cc.zhangsken.libaes;
+package com.github.loneyz.libaes;
 
-import android.widget.Toolbar;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.widget.Toolbar;
 
 public class AToolbar extends Toolbar {
     
@@ -31,10 +31,6 @@ public class AToolbar extends Toolbar {
 		
 		// 返回一个绑定资源结束的信号给资源
 		//a.recycle();
-
-	
-		
-        
     }
 
     public AToolbar(Context context, AttributeSet attrs, int defStyleAttr) {

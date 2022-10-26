@@ -1,4 +1,4 @@
-package cc.zhangsken.libaes;
+package com.github.loneyz.libaes;
 import android.widget.SeekBar;
 import android.content.Context;
 import android.util.AttributeSet;

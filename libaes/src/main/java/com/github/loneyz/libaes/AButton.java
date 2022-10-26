@@ -1,4 +1,4 @@
-package cc.zhangsken.libaes;
+package com.github.loneyz.libaes;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -12,8 +12,8 @@ public class AButton extends android.widget.Button {
 
     public AButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setBackground(context.getDrawable(cc.zhangsken.libaes.R.drawable.btn_style));
-        setTextColor(context.getColor(cc.zhangsken.libaes.R.drawable.text_style));
+        setBackground(context.getDrawable(com.github.loneyz.libaes.R.drawable.btn_style));
+        setTextColor(context.getColor(com.github.loneyz.libaes.R.drawable.text_style));
         
     }
 

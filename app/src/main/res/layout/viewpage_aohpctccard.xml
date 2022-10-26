@@ -10,7 +10,7 @@
 		android:layout_height="wrap_content"
 		android:text="AOHPCTSCard"/>
 
-	<cc.zhangsken.libaes.AOHPCTSCard
+	<com.github.loneyz.libaes.AOHPCTSCard
 		android:layout_width="100dp"
 		android:layout_height="100dp"/>
 
