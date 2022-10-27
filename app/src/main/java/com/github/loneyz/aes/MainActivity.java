@@ -11,6 +11,10 @@ import com.github.loneyz.aes.R;
 import java.util.ArrayList;
 import java.util.List;
 import com.github.loneyz.libaes.AToolbar;
+import android.view.Menu;
+import com.github.loneyz.libaes.ASupportToolbar;
+import android.view.MenuItem;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
 , View.OnClickListener {
@@ -36,10 +40,34 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 //        viewPager.setAdapter(new MyAdapter());
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_develop, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.item_log : {
+                Intent intent = new Intent(this, LogViewActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                break;
+            }
+        }
+        return false;
+        //return super.onOptionsItemSelected(item);
+    }
+    
+    
+    
+    
+
     //初始化view，即显示的图片
     void initView() {
-        AToolbar aToolbar = findViewById(R.id.activitymainAToolbar1);
-        setActionBar(aToolbar);
+        ASupportToolbar aSupportToolbar = findViewById(R.id.activitymainAToolbar1);
+        setSupportActionBar(aSupportToolbar);
         
         adapter = new ImagePagerAdapter(views);
         viewPager = findViewById(R.id.activitymainViewPager1);
