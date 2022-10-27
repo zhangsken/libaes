@@ -7,6 +7,7 @@ import android.view.View;
 import com.github.loneyz.libapplogutils.LogView;
 import com.github.loneyz.libapplogutils.LogFilterSpec;
 import android.app.Activity;
+import com.github.loneyz.libaes.AOHPCTCSeekBar;
 
 public class LogViewActivity extends Activity {
 
@@ -26,6 +27,8 @@ public class LogViewActivity extends Activity {
         // 开始显示Log.
         mLogView.addLogFilterSpec(new LogFilterSpec(LogFilterSpec.LogLevel.D, MainActivity.TAG));
         mLogView.addLogFilterSpec(new LogFilterSpec(LogFilterSpec.LogLevel.D, LogView.TAG));
+        mLogView.addLogFilterSpec(new LogFilterSpec(LogFilterSpec.LogLevel.D, AOHPCTCSeekBar.TAG));
+        
         mLogView.startLog();
 
     }

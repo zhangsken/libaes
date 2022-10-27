@@ -15,6 +15,8 @@ import android.view.Menu;
 import com.github.loneyz.libaes.ASupportToolbar;
 import android.view.MenuItem;
 import android.content.Intent;
+import com.github.loneyz.libaes.AOHPCTCSeekBar;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
 , View.OnClickListener {
@@ -32,12 +34,14 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
         //viewPager = findViewById(R.id.activitymainViewPager1);
         initData();
         initView();//调用初始化视图方法
         initPoint();//调用初始化导航原点的方法
         viewPager.addOnPageChangeListener(this);//滑动事件
-//        viewPager.setAdapter(new MyAdapter());
+        //viewPager.setAdapter(new MyAdapter());
+        
     }
 
     @Override
@@ -60,10 +64,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         //return super.onOptionsItemSelected(item);
     }
     
-    
-    
-    
-
     //初始化view，即显示的图片
     void initView() {
         ASupportToolbar aSupportToolbar = findViewById(R.id.activitymainAToolbar1);
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         linearLayout = findViewById(R.id.linearLayout);
         initPoint();//初始化页面下方的点
         viewPager.setOnPageChangeListener(this);
+        initAOHPCTCSeekBar();
     }
 
     //初始化所要显示的布局
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         View view2 = inflater.inflate(R.layout.viewpage_acard, null);
         View view3 = inflater.inflate(R.layout.viewpage_aohpctccard, null);
         View view4 = inflater.inflate(R.layout.viewpage_aohpctcsb, null);
+        
         View view5 = inflater.inflate(R.layout.viewpage_atickprogressbar, null);
         views = new ArrayList<>();
         views.add(view1);
@@ -199,5 +201,20 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         //通过getTag(),可以判断是哪个控件
         int i = (Integer) v.getTag();
         viewPager.setCurrentItem(i);//直接跳转到某一个页面的情况
+    }
+    
+    void initAOHPCTCSeekBar() {
+        AOHPCTCSeekBar seekbar = findViewById(R.id.activitymainAOHPCTCSeekBar1);
+        seekbar.setThumb(getDrawable(R.drawable.ic_launcher));
+        seekbar.setThumbOffset(10);
+        seekbar.setOnOHPCListener(new AOHPCTCSeekBar.OnOHPCListener() {
+
+                @Override
+                public void onOHPCommit() {
+                    Toast.makeText(getApplication(), "onOHPCommit ", Toast.LENGTH_SHORT).show();
+                }
+                
+            
+        });
     }
 }
