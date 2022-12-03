@@ -12,9 +12,6 @@ buildscript {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
         maven { url 'https://dl.bintray.com/ppartisan/maven/' }
         maven { url "https://clojars.org/repo/" }
-        maven { url = "file:///storage/emulated/0/Maven/repository" }
-        
-        
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$build_gradle_version"
@@ -34,11 +31,10 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
         maven { url 'https://dl.bintray.com/ppartisan/maven/' }
         maven { url "https://clojars.org/repo/" }
-        maven { url = "file:///storage/emulated/0/Maven/repository" }
-        
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+    delete rootProject.file("lint-baseline.xml")
 }
