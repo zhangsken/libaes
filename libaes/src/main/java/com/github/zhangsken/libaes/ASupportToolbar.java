@@ -27,7 +27,7 @@ public class ASupportToolbar extends Toolbar {
         super(context, attrs);
 
         // 获得TypedArray
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AToolbar);
+        /*TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AToolbar);
         // 获得attrs.xml里面的属性值,格式为:名称_属性名,后面是默认值
         startColor = a.getColor(R.styleable.AToolbar_attrAToolbarStartColor, context.getColor(R.color.colorAToolbarStartColor));
         centerColor = a.getColor(R.styleable.AToolbar_attrAToolbarCenterColor, context.getColor(R.color.colorAToolbarCenterColor));
@@ -41,7 +41,9 @@ public class ASupportToolbar extends Toolbar {
 
         // 返回一个绑定资源结束的信号给资源
         a.recycle();
-        notifyColorChange();
+        notifyColorChange();*/
+        
+        setBackground(context.getDrawable(R.drawable.atoolbar_frame));
     }
 
     public ASupportToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -52,7 +54,7 @@ public class ASupportToolbar extends Toolbar {
         this.startColor = startColor;
     }
 
-    public int getStartColor() {
+    /*public int getStartColor() {
         return startColor;
     }
 
@@ -70,9 +72,9 @@ public class ASupportToolbar extends Toolbar {
 
     public int getEndColor() {
         return endColor;
-    }
+    }*/
 
-    public void notifyColorChange() {
+    /*public void notifyColorChange() {
 
         //GradientDrawable mGradientDrawableBackground = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP,
         //                                                                  new int[]{mnStartColor, mnCenterColor,mnEndColor});
@@ -85,7 +87,7 @@ public class ASupportToolbar extends Toolbar {
         // mGradientDrawableShape.setStroke(10, Color.BLACK);
         setBackground(mGradientDrawableShape);
 
-    }
+    }*/
 
 }
     
