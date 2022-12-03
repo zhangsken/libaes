@@ -1,4 +1,4 @@
-package com.github.loneyz.aes;
+package com.github.zhangsken.aes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,16 +7,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-import com.github.loneyz.aes.R;
+import com.github.zhangsken.aes.R;
 import java.util.ArrayList;
 import java.util.List;
-import com.github.loneyz.libaes.AToolbar;
+import com.github.zhangsken.libaes.AToolbar;
 import android.view.Menu;
-import com.github.loneyz.libaes.ASupportToolbar;
+import com.github.zhangsken.libaes.ASupportToolbar;
 import android.view.MenuItem;
 import android.content.Intent;
-import com.github.loneyz.libaes.AOHPCTCSeekBar;
+import com.github.zhangsken.libaes.AOHPCTCSeekBar;
 import android.widget.Toast;
+import com.a4455jkjh.colorpicker.ColorPickerDialog;
+import android.graphics.Color;
+import android.graphics.ColorSpace;
+import com.a4455jkjh.colorpicker.view.ColorUtils;
+
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
 , View.OnClickListener {
@@ -30,18 +35,20 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private LinearLayout linearLayout;//下标所在在LinearLayout布局里
     private int currentPoint = 0;//当前被选中中页面的下标
 
+    ASupportToolbar mASupportToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         //viewPager = findViewById(R.id.activitymainViewPager1);
         initData();
         initView();//调用初始化视图方法
         initPoint();//调用初始化导航原点的方法
         viewPager.addOnPageChangeListener(this);//滑动事件
         //viewPager.setAdapter(new MyAdapter());
-        
+
     }
 
     @Override
@@ -52,23 +59,46 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.item_log : {
-                Intent intent = new Intent(this, LogViewActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                break;
-            }
+                    Intent intent = new Intent(this, LogViewActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    break;
+                }
+
+            case R.id.item_colordialog : {
+                    ColorPickerDialog dlg = new ColorPickerDialog(this, getColor(R.color.colorPrimary));
+                    dlg.setOnColorChangedListener(new com.a4455jkjh.colorpicker.view.OnColorChangedListener() {
+
+                            @Override
+                            public void beforeColorChanged() {
+                            }
+
+                            @Override
+                            public void onColorChanged(int color) {
+                                
+                            }
+
+                            @Override
+                            public void afterColorChanged() {
+                            }
+
+
+                        });
+                    dlg.show();
+                    break;
+                }
         }
         return false;
         //return super.onOptionsItemSelected(item);
     }
-    
+
     //初始化view，即显示的图片
     void initView() {
-        ASupportToolbar aSupportToolbar = findViewById(R.id.activitymainAToolbar1);
-        setSupportActionBar(aSupportToolbar);
-        
+        mASupportToolbar = findViewById(R.id.activitymainAToolbar1);
+        setSupportActionBar(mASupportToolbar);
+
         adapter = new ImagePagerAdapter(views);
         viewPager = findViewById(R.id.activitymainViewPager1);
         viewPager.setAdapter(adapter);
@@ -76,7 +106,11 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         initPoint();//初始化页面下方的点
         viewPager.setOnPageChangeListener(this);
         initAOHPCTCSeekBar();
+
+
     }
+    
+
 
     //初始化所要显示的布局
     void initData() {
@@ -86,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         View view2 = inflater.inflate(R.layout.viewpage_acard, null);
         View view3 = inflater.inflate(R.layout.viewpage_aohpctccard, null);
         View view4 = inflater.inflate(R.layout.viewpage_aohpctcsb, null);
-        
+
         View view5 = inflater.inflate(R.layout.viewpage_atickprogressbar, null);
         views = new ArrayList<>();
         views.add(view1);
@@ -202,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         int i = (Integer) v.getTag();
         viewPager.setCurrentItem(i);//直接跳转到某一个页面的情况
     }
-    
+
     void initAOHPCTCSeekBar() {
         AOHPCTCSeekBar seekbar = findViewById(R.id.activitymainAOHPCTCSeekBar1);
         seekbar.setThumb(getDrawable(R.drawable.ic_launcher));
@@ -213,8 +247,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 public void onOHPCommit() {
                     Toast.makeText(getApplication(), "onOHPCommit ", Toast.LENGTH_SHORT).show();
                 }
-                
-            
-        });
+
+
+            });
     }
 }

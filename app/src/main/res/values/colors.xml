@@ -11,12 +11,11 @@
 	-->
 	<!-- 测试方案 2 -->
     <color name="colorPrimary">#FF16B0E4</color>
-    <color name="colorPrimaryDark">#FF009BCE</color>
-    <color name="colorAccent">#FF4ED2FF</color>
+    <color name="colorPrimaryDark">#FF00749B</color>
+    <color name="colorAccent">#FF7EDEFF</color>
 
-	<!--<color name="colorAToolbarStartColor">#FFB2B2B2</color>
-    <color name="colorAToolbarCenterColor">#FF787878</color>
-    <color name="colorAToolbarEndColor">#FF555555</color>-->
-	<!---->
-
+    <color name="colorAToolbarStartColor">@color/colorPrimaryDark</color>
+    <color name="colorAToolbarCenterColor">@color/colorPrimary</color>
+    <color name="colorAToolbarEndColor">@color/colorAccent</color>
+    
 </resources>

@@ -6,7 +6,7 @@
 	android:layout_height="wrap_content"
 	android:gravity="center_vertical">
 
-	<com.github.loneyz.libaes.ASupportToolbar
+	<com.github.zhangsken.libaes.ASupportToolbar
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/activitymainAToolbar1"/>
@@ -16,7 +16,7 @@
 		android:layout_height="wrap_content"
 		android:text="AOHPCTCSeekBar"/>
 
-	<com.github.loneyz.libaes.AOHPCTCSeekBar
+	<com.github.zhangsken.libaes.AOHPCTCSeekBar
 		android:layout_width="300dp"
 		android:layout_height="wrap_content"
 		android:id="@+id/activitymainAOHPCTCSeekBar1"/>

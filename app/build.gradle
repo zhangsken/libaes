@@ -5,7 +5,7 @@ android {
     buildToolsVersion '30.0.3'
 
     defaultConfig {
-        applicationId "com.github.loneyz.aes"
+        applicationId "com.github.zhangsken.aes"
         minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
@@ -29,7 +29,8 @@ dependencies {
 	implementation 'androidx.fragment:fragment:1.0.0'
 	implementation 'androidx.appcompat:appcompat:1.0.0'
 	implementation project(':libaes')
-    implementation 'com.github.loneyz:libapplogutils:1.0.0'
-    implementation 'com.github.loneyz:libapputils:1.0.5'
+    implementation 'com.github.zhangsken:liblogutils:1.0.1'
+    implementation 'com.github.zhangsken:libapputils:1.1.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    
 }

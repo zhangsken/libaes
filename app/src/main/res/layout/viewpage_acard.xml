@@ -10,7 +10,7 @@
 		android:layout_height="wrap_content"
 		android:text="ACard"/>
 
-	<com.github.loneyz.libaes.ACard
+	<com.github.zhangsken.libaes.ACard
 		android:layout_width="200dp"
 		android:layout_height="200dp"
 		android:id="@+id/viewpageacardACard1"/>

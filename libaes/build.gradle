@@ -14,9 +14,9 @@ afterEvaluate {
         //}
         publications {
         release(MavenPublication) {
-            groupId = 'com.github.loneyz'
+            groupId = 'com.github.zhangsken'
             artifactId = 'libaes'
-            version = '1.0.1'
+            version = '1.0.0'
 
             //from components.java
             // 必须有这个 否则不会上传AAR包
@@ -29,8 +29,8 @@ afterEvaluate {
             
             pom {
                 name = 'Android Elementary Substance Library'
-                description = 'Loneyz\'s Android Elementary Substance Library.'
-                url = 'https://github.com/loneyz/libaes.git'
+                description = 'ZhanGSKen\'s Android Elementary Substance Library.'
+                url = 'https://github.com/zhangsken/libaes.git'
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
@@ -39,9 +39,9 @@ afterEvaluate {
                 }
                 developers {
                     developer {
-                        id = 'loneyz'
-                        name = 'loneyz'
-                        email = 'l3981402@gmail.com'
+                        id = 'zhangsken'
+                        name = 'ZhanGSKen'
+                        email = 'ZhanGSKen@QQ.COM'
                     }
                 }
             }
@@ -73,5 +73,6 @@ android {
 
 dependencies {
 	implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation "androidx.cardview:cardview:1.0.0"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

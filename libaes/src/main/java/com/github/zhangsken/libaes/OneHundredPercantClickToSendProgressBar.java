@@ -1,24 +1,27 @@
-package com.github.loneyz.libaes;
+package com.github.zhangsken.libaes;
 
+import android.widget.ProgressBar;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.ProgressBar;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.content.res.ColorStateList;
 
-public class ACard extends LinearLayout {
-
+public class OneHundredPercantClickToSendProgressBar extends ProgressBar {
     
+    public static final String TAG = "OneHundredPercantClickToSendProgressBar";
     
-    public ACard(Context context) {
+    public OneHundredPercantClickToSendProgressBar(Context context) {
         super(context);
     }
 
-    public ACard(Context context, AttributeSet attrs) {
+    public OneHundredPercantClickToSendProgressBar(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPadding(0+0+2+1,0+0+2+1,0+1+3+1,0+2+3+1);
+        Drawable drawable = context.getDrawable(R.drawable.ohpcts_frame);
+        setProgressDrawable(drawable);
+        //setProgress(49);
+        //setSecondaryProgress(87);
         
         // 获得TypedArray
         //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AToolbar);
@@ -31,17 +34,14 @@ public class ACard extends LinearLayout {
         //p.setTextSize(tSize);
         //Drawable drawable = context.getDrawable(R.drawable.frame_atoolbar);
 
-        setBackground(context.getDrawable(R.drawable.acard_frame_main));
+        //setBackground(context.getDrawable(R.drawable.acard_frame_main));
 
         // 返回一个绑定资源结束的信号给资源
         //a.recycle();
 
-
-
-
     }
 
-    public ACard(Context context, AttributeSet attrs, int defStyleAttr) {
+    public OneHundredPercantClickToSendProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
     

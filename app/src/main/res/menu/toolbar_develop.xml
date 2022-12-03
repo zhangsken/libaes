@@ -4,5 +4,8 @@
     <item
         android:id="@+id/item_log"
         android:title="Log"/>
+    <item
+        android:id="@+id/item_colordialog"
+        android:title="ColorDialog"/>
     
 </menu>

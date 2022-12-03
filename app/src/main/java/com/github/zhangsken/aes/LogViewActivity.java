@@ -1,13 +1,13 @@
-package com.github.loneyz.aes;
+package com.github.zhangsken.aes;
 
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.view.View;
-import com.github.loneyz.libapplogutils.LogView;
-import com.github.loneyz.libapplogutils.LogFilterSpec;
+import com.github.zhangsken.liblogutils.LogView;
+import com.github.zhangsken.liblogutils.LogFilterSpec;
 import android.app.Activity;
-import com.github.loneyz.libaes.AOHPCTCSeekBar;
+import com.github.zhangsken.libaes.AOHPCTCSeekBar;
 
 public class LogViewActivity extends Activity {
 
