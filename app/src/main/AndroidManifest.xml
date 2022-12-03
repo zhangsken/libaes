@@ -4,7 +4,7 @@
     package="com.github.zhangsken.aes">
 
     <application
-        android:name="com.github.zhangsken.libapputils.CrashApplication"
+        android:name="com.github.zhangsken.libapputils.BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
