@@ -11,4 +11,8 @@
         android:id="@+id/item_dialogstoragepath"
         android:title="StoragePathDialog"/>
     
+    <item
+        android:id="@+id/item_localfileselectdialog"
+        android:title="LocalFileSelectDialog"/>
+    
 </menu>

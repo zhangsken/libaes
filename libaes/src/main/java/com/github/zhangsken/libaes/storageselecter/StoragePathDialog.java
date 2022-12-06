@@ -5,11 +5,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import com.github.zhangsken.libaes.R;
-import android.app.AlertDialog;
+import android.app.Dialog;
 
-public class StoragePathDialog extends AlertDialog {
+public class StoragePathDialog extends Dialog {
 
-    public static final String TAG = "ColorPickerDialog";
+    public static final String TAG = "StoragePathDialog";
     View.OnClickListener mOnOKClickListener;
 
     public StoragePathDialog(android.content.Context context) {

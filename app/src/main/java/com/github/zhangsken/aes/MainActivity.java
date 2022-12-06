@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
                             @Override
                             public void onColorChanged(int color) {
-                                
+
                             }
 
                             @Override
@@ -92,15 +92,17 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                     break;
                 }
             case R.id.item_dialogstoragepath : {
-                    /*final StoragePathDialog dialog = new StoragePathDialog(this, 0);
+                    final StoragePathDialog dialog = new StoragePathDialog(this, 0);
                     dialog.setOnOKClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 dialog.dismiss();
                             }
                         });
-                    dialog.show();*/
-                    
+                    dialog.show();
+                    break;
+                }
+            case R.id.item_localfileselectdialog : {
                     final LocalFileSelectDialog dialog = new LocalFileSelectDialog(this);
                     dialog.setOnOKClickListener(new LocalFileSelectDialog.OKClickListener() {
                             @Override
@@ -112,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                     dialog.open();
                     break;
                 }
-                
         }
         return false;
         //return super.onOptionsItemSelected(item);
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
 
     }
-    
+
 
 
     //初始化所要显示的布局
