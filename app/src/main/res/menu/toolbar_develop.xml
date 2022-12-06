@@ -7,5 +7,8 @@
     <item
         android:id="@+id/item_colordialog"
         android:title="ColorDialog"/>
+    <item
+        android:id="@+id/item_dialogstoragepath"
+        android:title="StoragePathDialog"/>
     
 </menu>

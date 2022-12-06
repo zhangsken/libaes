@@ -21,6 +21,8 @@ import com.a4455jkjh.colorpicker.ColorPickerDialog;
 import android.graphics.Color;
 import android.graphics.ColorSpace;
 import com.a4455jkjh.colorpicker.view.ColorUtils;
+import com.github.zhangsken.libaes.storageselecter.StoragePathDialog;
+import com.github.zhangsken.libaes.storageselecter.LocalFileSelectDialog;
 
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
@@ -89,6 +91,28 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                     dlg.show();
                     break;
                 }
+            case R.id.item_dialogstoragepath : {
+                    /*final StoragePathDialog dialog = new StoragePathDialog(this, 0);
+                    dialog.setOnOKClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+                    dialog.show();*/
+                    
+                    final LocalFileSelectDialog dialog = new LocalFileSelectDialog(this);
+                    dialog.setOnOKClickListener(new LocalFileSelectDialog.OKClickListener() {
+                            @Override
+                            public void onOKClick(String sz) {
+                                Toast.makeText(getApplication(), sz, Toast.LENGTH_SHORT).show();
+                                //dialog.dismiss();
+                            }
+                        });
+                    dialog.open();
+                    break;
+                }
+                
         }
         return false;
         //return super.onOptionsItemSelected(item);
