@@ -23,6 +23,7 @@ import android.graphics.ColorSpace;
 import com.a4455jkjh.colorpicker.view.ColorUtils;
 import com.github.zhangsken.libaes.storageselecter.StoragePathDialog;
 import com.github.zhangsken.libaes.storageselecter.LocalFileSelectDialog;
+import com.github.zhangsken.libaes.utils.ScreenUtil;
 
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         viewPager.addOnPageChangeListener(this);//滑动事件
         //viewPager.setAdapter(new MyAdapter());
 
+        // 获取屏幕参数
+        //ScreenUtil.ScreenSize ss = ScreenUtil.getScreenSize(MainActivity.this);
+        //Toast.makeText(getApplication(), Integer.toString(ss.getHeightPixels())+" "+Integer.toString(ss.getWidthPixels()), Toast.LENGTH_SHORT).show();
     }
 
     @Override

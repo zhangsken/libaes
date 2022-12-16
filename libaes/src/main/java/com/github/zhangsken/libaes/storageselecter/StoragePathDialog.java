@@ -6,6 +6,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import com.github.zhangsken.libaes.R;
 import android.app.Dialog;
+import com.github.zhangsken.libaes.utils.ScreenUtil;
 
 public class StoragePathDialog extends Dialog {
 
@@ -34,10 +35,11 @@ public class StoragePathDialog extends Dialog {
         // 使得点击对话框外部不消失对话框
         setCanceledOnTouchOutside(false);
         // 设置对话框大小
-        view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(context).getScreenHeight() * 0.23f));
+        ScreenUtil.ScreenSize ss = ScreenUtil.getScreenSize(context);
+        view.setMinimumHeight((int) (ss.getHeightPixels() * 0.23f));
         Window dialogWindow = getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth() * 0.75f);
+        lp.width = (int) (ss.getWidthPixels() * 0.75f);
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.gravity = Gravity.CENTER;
         dialogWindow.setAttributes(lp);
