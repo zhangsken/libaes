@@ -15,6 +15,8 @@ import com.github.zhangsken.aes.fragments.LogFragment;
 import android.widget.AdapterView;
 import android.util.Log;
 import com.github.zhangsken.aes.fragments.AButtonFragment;
+import android.content.Intent;
+import android.net.Uri;
 
 public class TestActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -58,10 +60,9 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
         mlvDrawerMenuItem = findViewById(R.id.activitytestListView1);
 
         malDrawerMenuItem = new ArrayList<DrawerMenuItem>();
+        malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, "GitSource"));
         malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, LogFragment.TAG));
         malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, AButtonFragment.TAG));
-        malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, getString(R.string.app_name)));
-        malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, getString(R.string.app_name)));
         mDrawerMenuDataAdapter = new DrawerMenuDataAdapter<DrawerMenuItem>(malDrawerMenuItem, R.layout.listview_drawermenu) {
             @Override
             public void bindView(ViewHolder holder, DrawerMenuItem obj) {
@@ -193,23 +194,22 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
         switch (position) {
             case 0 :{
                     //Log.d(TAG, "MenuItem 0");
-                    setSelectFragment(LogFragment.TAG);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://8.210.159.116:28369/gitweb/libaes.git"));
+                    intent.setClassName("org.mozilla.firefox", "org.mozilla.gecko.LauncherActivity");
+                    startActivity(intent);
                     break;
                 }
             case 1 :{
                     //Log.d(TAG, "MenuItem 1");
-                    setSelectFragment(AButtonFragment.TAG);
+                    setSelectFragment(LogFragment.TAG);
                     break;
                 }
             case 2: {
-                    Log.d(TAG, "MenuItem 2");
+                    //Log.d(TAG, "MenuItem 2");
+                    setSelectFragment(AButtonFragment.TAG);
                     break;
                 }
-            case 3: {
-                    Log.d(TAG, "MenuItem 3");
-
-                    break;
-                }
+            
         }
     }
 
