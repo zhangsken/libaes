@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.github.zhangsken.aes.fragments.LogFragment;
 import android.widget.AdapterView;
 import android.util.Log;
+import com.github.zhangsken.aes.fragments.AButtonFragment;
 
 public class TestActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -57,8 +58,8 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
         mlvDrawerMenuItem = findViewById(R.id.activitytestListView1);
 
         malDrawerMenuItem = new ArrayList<DrawerMenuItem>();
-        malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, getString(R.string.app_name)));
-        malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, getString(R.string.app_name)));
+        malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, LogFragment.TAG));
+        malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, AButtonFragment.TAG));
         malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, getString(R.string.app_name)));
         malDrawerMenuItem.add(new DrawerMenuItem(R.drawable.ic_launcher, getString(R.string.app_name)));
         mDrawerMenuDataAdapter = new DrawerMenuDataAdapter<DrawerMenuItem>(malDrawerMenuItem, R.layout.listview_drawermenu) {
@@ -139,30 +140,51 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
             });
 
         if (mlistFragment.size() == 0) {
-            FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-
-
-            LogFragment logFragment = new LogFragment();
-            tx.add(R.id.activitytestFrameLayout1, logFragment, LogFragment.TAG);
-
-            tx.commit();
-
-            mlistFragment.add(logFragment);
-            setSelectFragment(0);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            LogFragment fragment = new LogFragment();
+            ft.add(R.id.activitytestFrameLayout1, fragment, fragment.TAG);
+            ft.show(fragment);
+            ft.commit();
+            mlistFragment.add(fragment);
         }
     }
 
-    void setSelectFragment(int nSelect) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    // 根据 TAG, 设置 Fragment 显示，
+    // 如果 Fragment 未创建就创建并显示。
+    //
+    void setSelectFragment(String szFragmentTAG) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        boolean isExist = false;
         for (int i = 0; i < mlistFragment.size(); i++) {
-            if (nSelect == i) {
-                transaction.show(mlistFragment.get(i));
+            if (mlistFragment.get(i).getTag().equals(szFragmentTAG)) {
+                ft.show(mlistFragment.get(i));
+                isExist = true;
             } else {
-                transaction.hide(mlistFragment.get(i));
+                ft.hide(mlistFragment.get(i));
             }
         }
 
-        transaction.commit();
+        if (!isExist) {
+            switch (szFragmentTAG) {
+                case LogFragment.TAG : {
+                        LogFragment fragment = new LogFragment();
+                        ft.add(R.id.activitytestFrameLayout1, fragment, fragment.TAG);
+                        ft.show(fragment);
+                        mlistFragment.add(fragment);
+                        break;
+                    }
+                case AButtonFragment.TAG : {
+                        AButtonFragment fragment = new AButtonFragment();
+                        ft.add(R.id.activitytestFrameLayout1, fragment, fragment.TAG);
+                        ft.show(fragment);
+                        mlistFragment.add(fragment);
+
+                        break;
+                    }
+            }
+        }
+
+        ft.commit();
     }
 
     @Override
@@ -170,12 +192,13 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
         mDrawerLayout.closeDrawer(mlvDrawerMenuItem);
         switch (position) {
             case 0 :{
-                    setSelectFragment(0);
-                    Log.d(TAG, "MenuItem 0");
+                    //Log.d(TAG, "MenuItem 0");
+                    setSelectFragment(LogFragment.TAG);
                     break;
                 }
             case 1 :{
-                    Log.d(TAG, "MenuItem 1");
+                    //Log.d(TAG, "MenuItem 1");
+                    setSelectFragment(AButtonFragment.TAG);
                     break;
                 }
             case 2: {

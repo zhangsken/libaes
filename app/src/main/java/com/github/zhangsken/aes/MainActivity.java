@@ -145,14 +145,12 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     void initData() {
 
         LayoutInflater inflater = LayoutInflater.from(this);
-        View view1 = inflater.inflate(R.layout.viewpage_abutton, null);
         View view2 = inflater.inflate(R.layout.viewpage_acard, null);
         View view3 = inflater.inflate(R.layout.viewpage_aohpctccard, null);
         View view4 = inflater.inflate(R.layout.viewpage_aohpctcsb, null);
 
         View view5 = inflater.inflate(R.layout.viewpage_atickprogressbar, null);
         views = new ArrayList<>();
-        views.add(view1);
         views.add(view2);
         views.add(view3);
         views.add(view4);

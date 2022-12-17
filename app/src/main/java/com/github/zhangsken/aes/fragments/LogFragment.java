@@ -11,9 +11,8 @@ import com.github.zhangsken.aes.TestActivity;
 import com.github.zhangsken.liblogutils.LogFilterSpec;
 
 public class LogFragment extends Fragment {
-    
     public static final String TAG = "LogFragment";
-
+    
     LogView mLogView;
     
     @Override
