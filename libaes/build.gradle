@@ -16,7 +16,7 @@ afterEvaluate {
         release(MavenPublication) {
             groupId = 'com.github.zhangsken'
             artifactId = 'libaes'
-            version = '4.6.1'
+            version = '4.6.2'
 
             //from components.java
             // 必须有这个 否则不会上传AAR包
@@ -52,7 +52,7 @@ afterEvaluate {
 
 
 android {
-    compileSdk 33
+    compileSdk 32
     buildToolsVersion '33.0.0'
     defaultConfig {
         minSdkVersion 21

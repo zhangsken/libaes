@@ -7,13 +7,13 @@ android {
         baseline = rootProject.file("lint-baseline.xml")
     }
     
-    compileSdkVersion 33
+    compileSdkVersion 32
     buildToolsVersion '33.0.0'
 
     defaultConfig {
         applicationId "com.github.zhangsken.aes"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         //{版本型态控制号.功能号.调试号}
         versionName "1.0.0"
