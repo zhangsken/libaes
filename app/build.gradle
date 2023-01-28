@@ -35,8 +35,8 @@ dependencies {
 	implementation 'androidx.fragment:fragment:1.0.0'
 	implementation 'androidx.appcompat:appcompat:1.0.0'
 	implementation project(':libaes')
-    implementation 'com.github.zhangsken:liblogutils:1.0.1'
-    implementation 'com.github.zhangsken:libapputils:1.1.0'
+    implementation 'com.github.zhangsken:liblogutils:1.0.3'
+    implementation 'com.github.zhangsken:libapputils:1.1.1'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     
 }
