@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="AToolbar">
+	<declare-styleable name="AToolbarStyle">
+        <!--<attr name="AToolbarStyle" format="reference" />-->
         <attr name="attrAToolbarStartColor" format="color" />
         <attr name="attrAToolbarCenterColor" format="color" />
         <attr name="attrAToolbarEndColor" format="color" />
-    </declare-styleable>   
+    </declare-styleable>
     <declare-styleable name="ACard">
         <attr name="attrACardBackgroudColor" format="color" />
         <attr name="attrACardShadowColor" format="color" />

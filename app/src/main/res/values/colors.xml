@@ -10,12 +10,12 @@
     <color name="colorAToolbarEndColor">#FF0078C8</color>
 	-->
 	<!-- 测试方案 2 -->
-    <color name="colorPrimary">#FF16B0E4</color>
-    <color name="colorPrimaryDark">#FF00749B</color>
-    <color name="colorAccent">#FF7EDEFF</color>
-
+    <color name="colorPrimary">#FF94E416</color>
+    <color name="colorPrimaryDark">#FF4C740D</color>
+    <color name="colorAccent">#FFC3FA6B</color>
+<!--
     <color name="colorAToolbarStartColor">@color/colorPrimaryDark</color>
     <color name="colorAToolbarCenterColor">@color/colorPrimary</color>
     <color name="colorAToolbarEndColor">@color/colorAccent</color>
-    
+    -->
 </resources>

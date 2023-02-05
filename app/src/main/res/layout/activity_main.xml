@@ -77,7 +77,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/activitymainViewPager1"
 				android:layout_below="@+id/linearLayout"
-                android:layout_alignParentBottom="true"/>
+				android:layout_alignParentBottom="true"/>
 
 		</RelativeLayout>
 

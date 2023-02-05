@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 默认方案 -->
-    <color name="colorPrimary">#FF727272</color>
-    <color name="colorPrimaryDark">#FF444444</color>
-    <color name="colorAccent">#FF9EA19F</color>
+    <color name="colorPrimary">#FFDAD528</color>
+    <color name="colorPrimaryDark">#FFDAD528</color>
+    <color name="colorAccent">#FFDAD528</color>
 	
-    <color name="colorAToolbarStartColor">@color/colorPrimaryDark</color>
-    <color name="colorAToolbarCenterColor">@color/colorPrimary</color>
-    <color name="colorAToolbarEndColor">@color/colorAccent</color>
+    <color name="colorAToolbarStartColor">#FF7D3F12</color>
+    <color name="colorAToolbarCenterColor">#FFCC6E2B</color>
+    <color name="colorAToolbarEndColor">#FFF4B98F</color>
 
     <color name="colorACardShadow">@color/colorPrimaryDark</color>
     <color name="colorACardFrame">@color/colorPrimary</color>
