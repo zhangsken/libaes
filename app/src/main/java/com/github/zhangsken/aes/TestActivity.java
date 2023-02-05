@@ -1,22 +1,28 @@
 package com.github.zhangsken.aes;
 
-import android.app.Activity;
-import android.os.Bundle;
-import java.util.ArrayList;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import com.github.zhangsken.libaes.ASupportToolbar;
-import android.widget.ListView;
-import android.view.View;
-import androidx.fragment.app.FragmentTransaction;
-import com.github.zhangsken.aes.fragments.LogFragment;
-import android.widget.AdapterView;
-import android.util.Log;
-import com.github.zhangsken.aes.fragments.AButtonFragment;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import com.a4455jkjh.colorpicker.ColorPickerDialog;
+import com.github.zhangsken.aes.R;
+import com.github.zhangsken.aes.fragments.AButtonFragment;
+import com.github.zhangsken.aes.fragments.LogFragment;
+import com.github.zhangsken.libaes.ASupportToolbar;
+import com.github.zhangsken.libaes.storageselecter.LocalFileSelectDialog;
+import com.github.zhangsken.libaes.storageselecter.StoragePathDialog;
+import java.util.ArrayList;
+import android.content.SharedPreferences;
 
 public class TestActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -36,6 +42,7 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setBaseTheme();
         setContentView(R.layout.activity_test);
 
         if (mlistFragment == null) {
@@ -212,6 +219,8 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
             
         }
     }
+    
+    
 
     class DrawerMenuItem {
 
@@ -242,5 +251,103 @@ public class TestActivity extends AppCompatActivity implements AdapterView.OnIte
             this.iconName = iconName;
         }
 
+    }
+    
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_develop, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_defaulttheme : {
+                    SharedPreferences sharedPreferences = getSharedPreferences(
+                        "com.github.zhangsken.aes.theme_preferences", MODE_PRIVATE);
+                    sharedPreferences.edit().putString("theme_type", "默认主题").commit();
+                    recreate();
+                    break;
+                }
+            case R.id.item_skytheme : {
+                    SharedPreferences sharedPreferences = getSharedPreferences(
+                        "com.github.zhangsken.aes.theme_preferences", MODE_PRIVATE);
+                    sharedPreferences.edit().putString("theme_type", "天空主题").commit();
+                    recreate();
+                    break;
+                }
+            case R.id.item_log : {
+                    Intent intent = new Intent(this, LogViewActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_LAUNCH_ADJACENT | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    break;
+                }
+
+            case R.id.item_colordialog : {
+                    ColorPickerDialog dlg = new ColorPickerDialog(this, getColor(R.color.colorPrimary));
+                    dlg.setOnColorChangedListener(new com.a4455jkjh.colorpicker.view.OnColorChangedListener() {
+
+                            @Override
+                            public void beforeColorChanged() {
+                            }
+
+                            @Override
+                            public void onColorChanged(int color) {
+
+                            }
+
+                            @Override
+                            public void afterColorChanged() {
+                            }
+
+
+                        });
+                    dlg.show();
+                    break;
+                }
+            case R.id.item_dialogstoragepath : {
+                    final StoragePathDialog dialog = new StoragePathDialog(this, 0);
+                    dialog.setOnOKClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+                    dialog.show();
+                    break;
+                }
+            case R.id.item_localfileselectdialog : {
+                    final LocalFileSelectDialog dialog = new LocalFileSelectDialog(this);
+                    dialog.setOnOKClickListener(new LocalFileSelectDialog.OKClickListener() {
+                            @Override
+                            public void onOKClick(String sz) {
+                                Toast.makeText(getApplication(), sz, Toast.LENGTH_SHORT).show();
+                                //dialog.dismiss();
+                            }
+                        });
+                    dialog.open();
+                    break;
+                }
+        }
+        return false;
+        //return super.onOptionsItemSelected(item);
+    }
+    private  void setBaseTheme() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+            "com.github.zhangsken.aes.theme_preferences", MODE_PRIVATE);
+        String themeType = sharedPreferences.getString("theme_type", "默认主题");
+        int themeId;
+        switch (themeType) {
+            case "默认主题":
+                themeId = R.style.AppTheme;
+                break;
+            case "天空主题":
+                themeId = R.style.SkyAppTheme;
+                break;
+            default:
+                themeId = R.style.AppTheme;
+        }
+        setTheme(themeId);
     }
 }

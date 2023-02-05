@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
-		<item name="attrAToolbarStartColor">#FF7D3F12</item>
-		<item name="attrAToolbarCenterColor">#FFCC6E2B</item>
-		<item name="attrAToolbarEndColor">#FFF4B98F</item>
-	</style>
+	<style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+        <!--<item name="aToolbar">@style/AToolbar</item>-->
+    </style>
 
+    <style name="AToolbar">
+        <item name="attrAToolbarStartColor">#FF2DDA27</item>
+        <item name="attrAToolbarCenterColor">#FF2DDA27</item>
+		<item name="attrAToolbarEndColor">#FF2DDA27</item>
+    </style>
+	
     <!--对话框的样式-->
     <style name="NormalDialogStyle">
         <!--对话框背景 -->

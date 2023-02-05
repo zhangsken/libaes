@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    
+
     <item
         android:id="@+id/item_log"
         android:title="Log"/>
@@ -10,9 +10,18 @@
     <item
         android:id="@+id/item_dialogstoragepath"
         android:title="StoragePathDialog"/>
-    
+
     <item
         android:id="@+id/item_localfileselectdialog"
         android:title="LocalFileSelectDialog"/>
-    
+    <item android:title="Theme">
+        <menu >
+            <item
+                android:id="@+id/item_defaulttheme"
+                android:title="Default Theme"/>
+            <item
+                android:id="@+id/item_skytheme"
+                android:title="Sky Theme"/>
+        </menu>
+    </item>
 </menu>

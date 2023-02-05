@@ -24,6 +24,7 @@ import com.a4455jkjh.colorpicker.view.ColorUtils;
 import com.github.zhangsken.libaes.storageselecter.StoragePathDialog;
 import com.github.zhangsken.libaes.storageselecter.LocalFileSelectDialog;
 import com.github.zhangsken.libaes.utils.ScreenUtil;
+import android.content.SharedPreferences;
 
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_develop, menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     @Override
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     void initView() {
         mASupportToolbar = findViewById(R.id.activitymainAToolbar1);
         setSupportActionBar(mASupportToolbar);
-
+        
         adapter = new ImagePagerAdapter(views);
         viewPager = findViewById(R.id.activitymainViewPager1);
         viewPager.setAdapter(adapter);
@@ -138,6 +139,25 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
 
     }
+    
+    private  void setBaseTheme() {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+            "com.github.zhangsken.aes.theme_preferences", MODE_PRIVATE);
+        String themeType = sharedPreferences.getString("theme_type", "默认主题");
+        int themeId;
+        switch (themeType) {
+            case "默认主题":
+                themeId = R.style.AppTheme;
+                break;
+            case "天空主题":
+                themeId = R.style.SkyAppTheme;
+                break;
+            default:
+                themeId = R.style.AppTheme;
+        }
+        setTheme(themeId);
+    }
+    
 
 
 
